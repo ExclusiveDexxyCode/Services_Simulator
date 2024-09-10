@@ -33,5 +33,10 @@
         "name": "Samsung Phones",
         "quantity": 50,
         "price": 400.0
+    },
+    {
+        "name": "Air Conditioner",
+        "quantity": 10,
+        "price": 250.0
     }
 ]
