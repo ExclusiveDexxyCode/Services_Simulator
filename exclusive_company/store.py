@@ -9,8 +9,9 @@ class Store(FileHandler):
     def display_catalog(self):
         print("Store Catalog:")
         for item in self.catalog:
-            print(f"Name: {item['name']}, Quantity: {item['quantity']}, Price: ${item['price']:.2f}")
-
+            print("=="*40)
+            print(f"Name: {item['name']}, Quantity: {item['quantity']}, Price: ${item['price']:,.2f}")
+            print("=="*40)
     def search_item(self, name):
         for item in self.catalog:
             if item["name"].lower() == name.lower():

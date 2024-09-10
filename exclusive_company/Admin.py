@@ -7,9 +7,17 @@ class Admin(FileHandler):
 
     def display_catalog(self):
         print("Current Catalog:")
+        overall_total = 0
         for item in self.catalog:
-            print(f"Name: {item['name']}, Quantity: {item['quantity']}, Price: ${item['price']:.2f}")
-
+            quantity = int(item['quantity'])
+            price = float(item['price'])
+            total_price = quantity * price
+            overall_total += total_price
+            print("="*40)
+            print(f"Name: {item['name']}, Quantity: {quantity}, Price per item: ${price:,.2f}, Total price: ${total_price:,.2f}")
+            print("="*40)
+        print(f"\nOverall Total Price of All Goods: ${overall_total:,.2f}")
+        print("="*40)
     def add_item(self, name, quantity, price):
         for item in self.catalog:
             if item["name"].lower() == name.lower():
@@ -21,7 +29,7 @@ class Admin(FileHandler):
         new_item = {"name": name, "quantity": quantity, "price": price}
         self.catalog.append(new_item)
         self.file_handler.save_catalog(self.catalog)
-        print(f"Added new item {name} to catalog.")
+        print(f"New item {name} with {quantity} quantity(ies) at ${price:,.2f} each was added to catalog.")
     
     def update_item(self, name, quantity=None, price=None):
         for item in self.catalog:
@@ -31,7 +39,7 @@ class Admin(FileHandler):
                 if price is not None:
                     item["price"] = price
                 self.file_handler.save_catalog(self.catalog)
-                print(f"Updated {name}: Quantity = {item['quantity']}, Price = ${item['price']:.2f}.")
+                print(f"Updated {name}: Quantity = {item['quantity']}, Price = ${item['price']:,.2f}.")
                 return
         
         print(f"Item {name} not found in catalog.")
@@ -66,6 +74,8 @@ class Admin(FileHandler):
                 quantity = int(input("Enter quantity: "))
                 price = float(input("Enter price per item: "))
                 self.add_item(name, quantity, price)
+                total_value = quantity * price
+                print(f"{name} was added.\n Total value added: ${total_value:,.2f}")
             elif choice == "3":
                 name = input("Enter item name to update: ")
                 quantity = input("Enter new quantity (leave blank if no change): ")

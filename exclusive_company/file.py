@@ -19,8 +19,7 @@ class FileHandler:
             file_path = f"exclusive_company/store/{filename}"
             with open(file_path, 'w') as file:
                 json.dump(data, file, indent=4)
-            print(f"Saved {filename}:")
-            print(json.dumps(data, indent=4))
+            #print(f"{filename}")
         except IOError as e:
             print(f"Error saving {filename}: {e}")
 

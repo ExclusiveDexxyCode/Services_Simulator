@@ -38,5 +38,10 @@
         "name": "Air Conditioner",
         "quantity": 10,
         "price": 250.0
+    },
+    {
+        "name": "Suitcase",
+        "quantity": 15,
+        "price": 800.0
     }
 ]

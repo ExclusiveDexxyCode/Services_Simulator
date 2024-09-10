@@ -2,8 +2,9 @@ from exclusive_company.Admin import Admin
 from exclusive_company.store import Store
 
 class MainFunction(Admin, Store):
-    def main():
+    def main(self):
         print("Welcome to the Store Management System!")
+
     def run(self):
         while True:
             print("\n1. Admin Interface")

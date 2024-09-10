@@ -1,15 +1,15 @@
 from mirabank.index import MiraBank
-from exclusive_company.exclusive import Exclusive_company
+from exclusive_company.exclusive import ExclusiveCompany
 
 class ServiceManager:
     def __init__(self):
         self.mira_bank = MiraBank()
-        self.exclusive_company = Exclusive_company("EDC International")
+        self.exclusive_company = ExclusiveCompany("EDC International")
         
     def run(self):
         while True:
             print('Hello, welcome to the mi-global network. What service would you like to use?')
-            print('1. Mirabank\n2. Exclusive_company\n8. Exit')
+            print('1. MiraBank\n2. ExclusiveCompany\n8. Exit')
             choice = input("Choose 1/2/8: ")
 
             if choice == "1":
