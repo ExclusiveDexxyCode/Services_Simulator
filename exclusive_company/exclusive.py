@@ -55,7 +55,17 @@ class Exclusive_company(Management, MainFunction):
                     else:
                         print(f"Your total net worth is ${self.net_worth}")
                 elif investment_options == "4":
-                    print(self.assets)
+                    if not self.assets:
+                        print("No assets found.")
+                    else:
+                        print("="*60)
+                        print("Assets:")
+                        for asset in self.assets:
+                            print(f"Name: {asset['name']}")
+                            print(f"Quantity: {asset['quantity']}")
+                            print(f"Price per asset: ${asset['price']}")
+                            print("-"*60)
+                        print("="*60)
                 elif investment_options == "5":
                     print("Thank you for your time. It was great hearing from you.")
                     break
@@ -68,5 +78,3 @@ class Exclusive_company(Management, MainFunction):
                 break
             else:
                 print("Invalid option, please choose again.")
-
-        
