@@ -1,4 +1,4 @@
-from exclusive_company.Supermarketfile import FileHandler
+from exclusive_company.file import FileHandler
 
 class Store(FileHandler):
     def __init__(self, filename='catalog.json'):

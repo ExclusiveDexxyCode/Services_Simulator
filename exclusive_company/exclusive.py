@@ -1,5 +1,5 @@
 from exclusive_company.management import Management
-from exclusive_company.Supermarketmain import MainFunction
+from exclusive_company.Supermarket import MainFunction
 
 class Exclusive_company(Management, MainFunction):
     def __init__(self, name):
@@ -7,7 +7,7 @@ class Exclusive_company(Management, MainFunction):
         self.company_name = name
         self.assets = self.load_from_file("assets.json")
         self.net_worth = self.load_net_worth()
-        self.supermarketmain = MainFunction()
+        self.supermarket = MainFunction()
     def add_asset(self, asset_dict):
         self.assets.append(asset_dict)
         
@@ -72,7 +72,7 @@ class Exclusive_company(Management, MainFunction):
                 else:
                     print("Invalid option, please choose again.")
             elif options == "b":
-                self.supermarketmain.run()
+                self.supermarket.run()
             elif options == "c":
                 print("Thank you for choosing our services")
                 break

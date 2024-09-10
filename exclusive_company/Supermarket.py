@@ -1,5 +1,5 @@
-from exclusive_company.SupermarketAdmin import Admin
-from exclusive_company.Supermarketstore import Store
+from exclusive_company.Admin import Admin
+from exclusive_company.store import Store
 
 class MainFunction(Admin, Store):
     def main():

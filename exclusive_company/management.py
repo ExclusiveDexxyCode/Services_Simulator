@@ -1,6 +1,6 @@
-from exclusive_company.file import File
+from exclusive_company.file import FileHandler
 
-class Management(File):
+class Management(FileHandler):
     def __init__(self):
         super().__init__()
 
